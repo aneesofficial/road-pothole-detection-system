@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+env/
+venv/
+
+# Environment Variables
+.env
+.env.local
+
+# Node
+node_modules/
+dist/
+build/
+.npm/
+
+# Large Model Files
+models/*.pt
+!models/README.md
+models/best.pt
+
+# Caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db
