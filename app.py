@@ -14,7 +14,6 @@ from ultralytics import YOLO
 
 st.set_page_config(
     page_title="RoadGuard AI | Pothole Intelligence",
-    page_icon="🚧",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -176,12 +175,12 @@ model = load_model()
 
 with st.sidebar:
 
-    st.title("🚧 RoadGuard AI")
+    st.title("RoadGuard AI")
     st.caption("Pothole Intelligence System")
 
     st.divider()
 
-    st.subheader("⚙️ Detection Settings")
+    st.subheader("Detection Settings")
 
     confidence = st.slider(
         "Confidence Threshold",
@@ -193,7 +192,7 @@ with st.sidebar:
 
     st.divider()
 
-    st.subheader("🤖 AI Model")
+    st.subheader("AI Model")
 
     st.write("**Model:** YOLO")
     st.write("**Task:** Object Detection")
@@ -203,9 +202,9 @@ with st.sidebar:
     st.divider()
 
     if model is not None:
-        st.success("Model Ready ✅")
+        st.success("Model Ready")
     else:
-        st.error("Model Missing ❌")
+        st.error("Model Missing")
 
 
 # ============================================================
@@ -216,7 +215,7 @@ st.markdown("""
 <div class="hero">
 
 <div class="hero-title">
-Road<span>Guard</span> AI 🚧
+Road<span>Guard</span> AI
 </div>
 
 <div class="hero-subtitle">
@@ -235,7 +234,7 @@ intelligence using a trained YOLO computer-vision model.
 
 if model is None:
 
-    st.error("❌ Trained model not found.")
+    st.error("Trained model not found.")
 
     st.info(
         f"Place your trained model here:\n\n"
@@ -250,7 +249,7 @@ if model is None:
 # ============================================================
 
 st.markdown(
-    '<div class="section-title">📷 Road Image Analysis</div>',
+    '<div class="section-title">Road Image Analysis</div>',
     unsafe_allow_html=True
 )
 
@@ -310,7 +309,7 @@ if uploaded_file is not None:
     # --------------------------------------------------------
 
     analyze = st.button(
-        "🔍 ANALYZE ROAD IMAGE",
+        "ANALYZE ROAD IMAGE",
         type="primary",
         use_container_width=True
     )
@@ -318,7 +317,7 @@ if uploaded_file is not None:
 
     if analyze:
 
-        with st.spinner("🤖 RoadGuard AI is analyzing the image..."):
+        with st.spinner("RoadGuard AI is analyzing the image..."):
 
             start_time = time.time()
 
@@ -336,7 +335,7 @@ if uploaded_file is not None:
 
             except Exception as e:
 
-                st.error(f"❌ Detection failed: {e}")
+                st.error(f"Detection failed: {e}")
                 st.stop()
 
 
@@ -438,7 +437,7 @@ if "result" in st.session_state:
             f"""
             <div class="warning">
                 <h3 style="color:#ff6b6b;">
-                ⚠️ {total} POTHOLE(S) DETECTED
+                {total} POTHOLE(S) DETECTED
                 </h3>
 
                 <p style="color:#cbd5e1;">
@@ -456,7 +455,7 @@ if "result" in st.session_state:
             """
             <div class="success-box">
                 <h3 style="color:#4ade80;">
-                ✅ NO POTHOLES DETECTED
+                NO POTHOLES DETECTED
                 </h3>
 
                 <p style="color:#cbd5e1;">
@@ -473,7 +472,7 @@ if "result" in st.session_state:
     # --------------------------------------------------------
 
     st.markdown(
-        '<div class="section-title">📊 Detection Summary</div>',
+        '<div class="section-title">Detection Summary</div>',
         unsafe_allow_html=True
     )
 
@@ -509,7 +508,7 @@ if "result" in st.session_state:
     # --------------------------------------------------------
 
     st.markdown(
-        '<div class="section-title">🛰️ Visual Inspection</div>',
+        '<div class="section-title">Visual Inspection</div>',
         unsafe_allow_html=True
     )
 
@@ -543,7 +542,7 @@ if "result" in st.session_state:
     # --------------------------------------------------------
 
     st.markdown(
-        '<div class="section-title">🎯 Detection Intelligence</div>',
+        '<div class="section-title">Detection Intelligence</div>',
         unsafe_allow_html=True
     )
 
@@ -591,7 +590,7 @@ if "result" in st.session_state:
     # --------------------------------------------------------
 
     st.markdown(
-        '<div class="section-title">⬇️ Export Result</div>',
+        '<div class="section-title">⬇Export Result</div>',
         unsafe_allow_html=True
     )
 
@@ -610,7 +609,7 @@ if "result" in st.session_state:
     )
 
     st.download_button(
-        "⬇️ Download Annotated Image",
+        "⬇Download Annotated Image",
         data=buffer.getvalue(),
         file_name=(
             "RoadGuard_Pothole_Result_"
@@ -626,7 +625,7 @@ if "result" in st.session_state:
 # ============================================================
 
 st.markdown(
-    '<div class="section-title">🧠 About RoadGuard AI</div>',
+    '<div class="section-title">About RoadGuard AI</div>',
     unsafe_allow_html=True
 )
 
@@ -639,7 +638,7 @@ with a1:
     <div class="card">
 
     <div class="card-title">
-    🎯 AI Detection
+    AI Detection
     </div>
 
     <div class="card-text">
@@ -657,7 +656,7 @@ with a2:
     <div class="card">
 
     <div class="card-title">
-    📍 Spatial Intelligence
+    Spatial Intelligence
     </div>
 
     <div class="card-text">
@@ -675,7 +674,7 @@ with a3:
     <div class="card">
 
     <div class="card-title">
-    ⚡ Local Inference
+    Local Inference
     </div>
 
     <div class="card-text">
@@ -694,11 +693,9 @@ with a3:
 st.markdown("""
 <div class="footer">
 
-🚧 <b>RoadGuard AI</b> — Road Pothole Detection System
+<b>RoadGuard AI</b> — Road Pothole Detection System
 
 <br><br>
-
-Built with Python • Streamlit • YOLO • Computer Vision
 
 </div>
 """, unsafe_allow_html=True)
